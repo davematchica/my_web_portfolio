@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">LOADING DASHBOARD</p>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>&lt;ADMIN /&gt;</h1>
+                <p>Portfolio Dashboard</p>
+            </div>
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <input type="email" id="login-email" name="email" required>
+                    <label for="login-email">Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" name="password" required>
+                    <label for="login-password">Password</label>
+                </div>
+                <button type="submit" class="btn btn-primary">LOGIN</button>
+                <div id="login-status" class="form-status"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard" style="display: none;">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>&lt;ADMIN /&gt;</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active" data-section="overview">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Overview</span>
+                </a>
+                <a href="#about" class="nav-item" data-section="about">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">About</span>
+                </a>
+                <a href="#projects" class="nav-item" data-section="projects">
+                    <span class="nav-icon">💼</span>
+                    <span class="nav-text">Projects</span>
+                </a>
+                <a href="#skills" class="nav-item" data-section="skills">
+                    <span class="nav-icon">⚡</span>
+                    <span class="nav-text">Skills</span>
+                </a>
+                <a href="#contact" class="nav-item" data-section="contact">
+                    <span class="nav-icon">📧</span>
+                    <span class="nav-text">Contact Info</span>
+                </a>
+                <a href="#messages" class="nav-item" data-section="messages">
+                    <span class="nav-icon">💬</span>
+                    <span class="nav-text">Messages</span>
+                    <span class="badge" id="messages-badge" style="display: none;">0</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="btn btn-secondary">LOGOUT</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <h1 id="section-title">Dashboard Overview</h1>
+                </div>
+                <div class="header-right">
+                    <a href="../index.html" target="_blank" class="btn btn-secondary">VIEW SITE</a>
+                </div>
+            </header>
+
+            <div class="content-body" id="content-body">
+                <!-- Content will be loaded here dynamically -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../config/supabase.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="admin-auth.js"></script>
+    <script src="admin-content.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+# ==========================================
+# SECURITY - NEVER COMMIT THESE FILES!
+# ==========================================
+
+# Supabase credentials (CRITICAL - DO NOT COMMIT!)
+config/supabase.js
+config/supabase.*.js
+config/*.secret.js
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Any file containing "secret" or "private"
+*secret*
+*private*
+*.key
+*.pem
+*.p12
+*.pfx
+
+# ==========================================
+# Dependencies
+# ==========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ==========================================
+# Operating System Files
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Windows
+*.lnk
+~$*
+
+# macOS
+*.dmg
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
+
+# ==========================================
+# Editor & IDE Files
+# ==========================================
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains IDEs (WebStorm, PhpStorm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ==========================================
+# Logs & Debugging
+# ==========================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+.eslintcache
+
+# ==========================================
+# Temporary Files
+# ==========================================
+tmp/
+temp/
+*.tmp
+*.temp
+*.cache
+.cache/
+
+# ==========================================
+# Build & Distribution
+# ==========================================
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist
+.serverless/
+
+# ==========================================
+# Testing
+# ==========================================
+coverage/
+*.coverage
+.nyc_output
+.grunt
+
+# ==========================================
+# Backup Files
+# ==========================================
+*.backup
+*.bak
+*.old
+*.orig
+*~
+
+# ==========================================
+# User Data (Don't commit personal content)
+# ==========================================
+# Uncomment if you have actual images/videos you don't want to share
+# assets/images/*
+# !assets/images/.gitkeep
+# assets/videos/*
+
+# ==========================================
+# Database Dumps (if you export data)
+# ==========================================
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+
+# ==========================================
+# Compressed Files (usually don't need in repo)
+# ==========================================
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# ==========================================
+# IMPORTANT NOTES
+# ==========================================
+# Before pushing to GitHub:
+# 1. Make sure config/supabase.js is NOT included
+# 2. Check no .env files are included
+# 3. Review 'git status' carefully
+# 4. Use 'git add -p' for careful staging

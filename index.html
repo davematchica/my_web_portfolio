@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Web Developer</title>
+    <meta name="description" content="Passionate web developer creating dynamic, responsive websites that help businesses thrive in the digital landscape.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">INITIALIZING SYSTEM</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="main-nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">DEV</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <span class="nav-number">01</span>
+                    <span class="nav-text">HOME</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <span class="nav-number">02</span>
+                    <span class="nav-text">ABOUT</span>
+                </a>
+                <a href="#projects" class="nav-link" data-section="projects">
+                    <span class="nav-number">03</span>
+                    <span class="nav-text">PROJECTS</span>
+                </a>
+                <a href="#skills" class="nav-link" data-section="skills">
+                    <span class="nav-number">04</span>
+                    <span class="nav-text">SKILLS</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <span class="nav-number">05</span>
+                    <span class="nav-text">CONTACT</span>
+                </a>
+            </div>
+
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="section hero-section">
+        <div class="grid-background"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-tag">WEB DEVELOPER</div>
+                <h1 class="hero-title">
+                    <span class="title-line">BUILDING THE</span>
+                    <span class="title-line gradient-text">FUTURE</span>
+                    <span class="title-line">ONE LINE AT A TIME</span>
+                </h1>
+                <p class="hero-description" id="hero-bio">
+                    I'm a passionate web developer who partners with businesses to create dynamic, responsive websites that drive real results—from boosting user engagement to improving conversion rates. I specialize in clean, maintainable code and best practices to build fast, accessible, and scalable solutions.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">VIEW PROJECTS</a>
+                    <a href="#contact" class="btn btn-secondary">GET IN TOUCH</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="card-header">
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                    </div>
+                    <div class="card-body">
+                        <pre><code id="code-animation"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">ABOUT ME</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text" id="about-text">
+                    <h3>Hello, I'm a Web Developer</h3>
+                    <p>With a passion for creating exceptional digital experiences, I transform ideas into functional, beautiful websites. My approach combines technical expertise with creative problem-solving to deliver solutions that exceed expectations.</p>
+                    <p>I believe in continuous learning and staying updated with the latest web technologies to provide cutting-edge solutions for my clients.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card" data-stat="projects">
+                        <div class="stat-number" data-target="0">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card" data-stat="clients">
+                        <div class="stat-number" data-target="0">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-card" data-stat="experience">
+                        <div class="stat-number" data-target="0">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">FEATURED PROJECTS</h2>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be loaded dynamically -->
+                <div class="project-placeholder">
+                    <p>Loading projects...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">TECHNICAL SKILLS</h2>
+            </div>
+            <div class="skills-content">
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Skills will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">GET IN TOUCH</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Work Together</h3>
+                    <p>Have a project in mind? Let's discuss how I can help bring your vision to life.</p>
+                    <div class="contact-details" id="contact-details">
+                        <!-- Contact details will be loaded dynamically -->
+                    </div>
+                    <div class="social-links" id="social-links">
+                        <!-- Social links will be loaded dynamically -->
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+                    <div class="form-status" id="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; <span id="current-year"></span> Portfolio. All rights reserved.</p>
+            <p>Designed & Developed with <span class="heart">❤</span></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config/supabase.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
