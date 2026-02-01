@@ -43,6 +43,7 @@
                     <label for="login-password">Password</label>
                 </div>
                 <button type="submit" class="btn btn-primary">LOGIN</button>
+                <a href="../index.html" class="btn btn-secondary" style="margin-top: var(--spacing-md, 1rem); text-align: center;">BACK TO WEBSITE</a>
                 <div id="login-status" class="form-status"></div>
             </form>
         </div>
@@ -50,10 +51,18 @@
 
     <!-- Dashboard -->
     <div id="dashboard" class="dashboard" style="display: none;">
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <h2>&lt;ADMIN /&gt;</h2>
+                <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">&times;</button>
             </div>
             <nav class="sidebar-nav">
                 <a href="#overview" class="nav-item active" data-section="overview">
@@ -86,6 +95,9 @@
                 <button id="logout-btn" class="btn btn-secondary">LOGOUT</button>
             </div>
         </aside>
+
+        <!-- Sidebar Overlay for Mobile -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
         <!-- Main Content -->
         <main class="main-content">

@@ -378,8 +378,10 @@
     height: 100%;
     background: rgba(10, 14, 39, 0.95);
     z-index: var(--z-modal);
+    /* ADD THESE: */
     align-items: center;
     justify-content: center;
+    padding: 2rem; /* ADD THIS for mobile spacing */
 }
 
 .modal.active {
@@ -390,45 +392,37 @@
     background: var(--color-bg-card);
     border: 1px solid rgba(0, 240, 255, 0.2);
     border-radius: var(--radius-lg);
-    padding: var(--spacing-2xl);
+    /* REMOVE padding here, add it per section */
     max-width: 600px;
-    width: 90%;
+    width: 90%; /* CHANGE from 90% to 100% */
     max-height: 90vh;
     overflow-y: auto;
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.3); /* ADD glow effect */
 }
 
 .modal-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: var(--spacing-xl);
-    padding-bottom: var(--spacing-lg);
+    /* REMOVE margin-bottom, keep only padding */
+    padding: var(--spacing-xl); /* ADD padding */
     border-bottom: 1px solid rgba(0, 240, 255, 0.1);
 }
 
 .modal-title {
     font-size: var(--font-size-2xl);
     color: var(--color-primary);
+    margin: 0; /* ADD this */
 }
 
-.modal-close {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: 1px solid var(--color-primary);
-    border-radius: var(--radius-md);
-    color: var(--color-primary);
-    font-size: var(--font-size-xl);
-    cursor: pointer;
-    transition: all var(--transition-base);
+/* ADD THIS - missing from your CSS */
+.modal-body {
+    padding: var(--spacing-xl);
 }
 
-.modal-close:hover {
-    background: var(--color-primary);
-    color: var(--color-bg-primary);
+/* ADD THIS - for forms inside modals */
+.modal .admin-form {
+    padding: var(--spacing-xl);
 }
 
 /* Responsive */
@@ -458,5 +452,179 @@
 
     .form-row {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Menu Toggle (Burger) */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: var(--spacing-md, 1rem);
+    left: var(--spacing-md, 1rem);
+    z-index: calc(var(--z-fixed, 100) + 10);
+    width: 50px;
+    height: 50px;
+    background: var(--color-bg-card, #1a1a2e);
+    border: 1px solid var(--color-primary, #00f0ff);
+    border-radius: var(--radius-md, 8px);
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0;
+    transition: all var(--transition-base, 0.3s ease);
+}
+
+.mobile-menu-toggle:hover {
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--color-primary, #00f0ff);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Sidebar Close Button (mobile only) */
+.sidebar-close {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--color-primary, #00f0ff);
+    border-radius: var(--radius-md, 8px);
+    color: var(--color-primary, #00f0ff);
+    font-size: var(--font-size-2xl, 1.5rem);
+    cursor: pointer;
+    transition: all var(--transition-base, 0.3s ease);
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-close:hover {
+    background: var(--color-primary, #00f0ff);
+    color: var(--color-bg-primary, #0a0e27);
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: calc(var(--z-fixed, 100) - 1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+}
+
+/* Responsive Updates */
+@media (max-width: 768px) {
+    /* Show mobile menu toggle */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    /* Show close button in sidebar header */
+    .sidebar-close {
+        display: flex;
+    }
+    
+    /* Update sidebar header for mobile */
+    .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Hide sidebar by default on mobile */
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: var(--z-fixed, 100);
+    }
+
+    /* Show sidebar when active */
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    /* Show overlay when sidebar is active */
+    .sidebar.active ~ .sidebar-overlay,
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+    /* Adjust main content */
+    .main-content {
+        margin-left: 0;
+    }
+    
+    /* Adjust content header for mobile */
+    .content-header {
+        padding-left: 70px; /* Make room for burger menu */
+    }
+
+    .content-header {
+        flex-direction: column;
+        gap: var(--spacing-md, 1rem);
+        align-items: flex-start;
+    }
+    
+    .header-right {
+        width: 100%;
+    }
+    
+    .header-right .btn {
+        width: 100%;
+    }
+
+    /* Adjust stats grid */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adjust form rows */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Adjust modal for mobile */
+    .modal-content {
+        width: 95%;
+        max-height: 85vh;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .sidebar {
+        width: 240px;
+    }
+    
+    .main-content {
+        margin-left: 240px;
     }
 }

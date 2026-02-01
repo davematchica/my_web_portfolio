@@ -109,6 +109,8 @@ class AdminAuth {
         if (loadingScreen) loadingScreen.style.display = 'none';
         if (loginScreen) loginScreen.style.display = 'flex';
         if (dashboard) dashboard.style.display = 'none';
+
+        window.adminContent = null;
     }
 
     showDashboard() {
@@ -119,6 +121,8 @@ class AdminAuth {
         if (loadingScreen) loadingScreen.style.display = 'none';
         if (loginScreen) loginScreen.style.display = 'none';
         if (dashboard) dashboard.style.display = 'flex';
+
+        document.dispatchEvent(new CustomEvent('adminLoginSuccess'));
     }
 
     showStatus(message, type) {
